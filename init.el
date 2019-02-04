@@ -31,7 +31,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (helm-projectile heml-projectile helm magit solarized-theme lsp-java-treemacs dap-java dap-mode company-lsp yasnippet lsp-ui lsp-java lsp-mode treemacs-icons-dired treemacs-projectile treemacs use-package))))
+    (shell-pop flycheck go-mode projectile hydra helm-projectile heml-projectile helm magit solarized-theme lsp-java-treemacs dap-java dap-mode company-lsp yasnippet lsp-ui lsp-java lsp-mode treemacs-icons-dired treemacs-projectile treemacs use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -142,6 +142,27 @@
 
 (use-package magit
   :ensure t)
+
+(use-package go-mode
+  :ensure t)
+
+(use-package flycheck
+  :ensure t)
+
+(use-package org
+  :ensure t)
+
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+
+(use-package shell-pop
+  :bind (("C-t" . shell-pop))
+  :config
+  (setq shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
+  (setq shell-pop-term-shell "/bin/bash")
+  ;; need to do this manually or not picked up by `shell-pop'
+  (shell-pop--set-shell-type 'shell-pop-shell-type shell-pop-shell-type))
 
 (provide 'init)
 ;;; init.el ends here
