@@ -27,8 +27,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("15b6fc5ba8f800d26f72b5c8acda87eac5260446364f534dcbd872e33da69f52" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" "15b6fc5ba8f800d26f72b5c8acda87eac5260446364f534dcbd872e33da69f52" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
     (shell-pop flycheck go-mode projectile hydra helm-projectile heml-projectile helm magit solarized-theme lsp-java-treemacs dap-java dap-mode company-lsp yasnippet lsp-ui lsp-java lsp-mode treemacs-icons-dired treemacs-projectile treemacs use-package))))
@@ -39,8 +40,9 @@
  ;; If there is more than one, they won't work right.
  )
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/morning-star-theme/") 
-(load-theme 'morning-star t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/morning-star-theme/")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/moe-theme.el/")
+(load-theme 'moe-dark t)
 
 (use-package hydra
   :ensure t)
@@ -149,6 +151,8 @@
 (use-package flycheck
   :ensure t)
 
+(global-flycheck-mode)
+
 (use-package org
   :ensure t)
 
@@ -163,6 +167,8 @@
   (setq shell-pop-term-shell "/bin/bash")
   ;; need to do this manually or not picked up by `shell-pop'
   (shell-pop--set-shell-type 'shell-pop-shell-type shell-pop-shell-type))
+
+(defvar visual-wrap-column nil)
 
 (provide 'init)
 ;;; init.el ends here

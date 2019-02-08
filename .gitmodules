@@ -1,3 +1,6 @@
 [submodule "morning-star-theme"]
 	path = morning-star-theme
 	url = https://github.com/Alexander-Miller/morning-star-theme.git
+[submodule "moe-theme.el"]
+	path = moe-theme.el
+	url = https://github.com/kuanyui/moe-theme.el.git
