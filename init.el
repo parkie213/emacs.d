@@ -32,7 +32,7 @@
  '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
-    (shell-pop flycheck go-mode projectile hydra helm-projectile heml-projectile helm magit solarized-theme lsp-java-treemacs dap-java dap-mode company-lsp yasnippet lsp-ui lsp-java lsp-mode treemacs-icons-dired treemacs-projectile treemacs use-package))))
+    (dockerfile-mode shell-pop flycheck go-mode projectile hydra helm-projectile heml-projectile helm magit solarized-theme lsp-java-treemacs dap-java dap-mode company-lsp yasnippet lsp-ui lsp-java lsp-mode treemacs-icons-dired treemacs-projectile treemacs use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -169,6 +169,9 @@
   (shell-pop--set-shell-type 'shell-pop-shell-type shell-pop-shell-type))
 
 (defvar visual-wrap-column nil)
+
+(use-package dockerfile-mode
+  :ensure t)
 
 (provide 'init)
 ;;; init.el ends here
