@@ -32,7 +32,7 @@
  '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
-    (dockerfile-mode shell-pop flycheck go-mode projectile hydra helm-projectile heml-projectile helm magit solarized-theme lsp-java-treemacs dap-java dap-mode company-lsp yasnippet lsp-ui lsp-java lsp-mode treemacs-icons-dired treemacs-projectile treemacs use-package))))
+    (web-mode dockerfile-mode shell-pop flycheck go-mode projectile hydra helm-projectile heml-projectile helm magit solarized-theme lsp-java-treemacs dap-java dap-mode company-lsp yasnippet lsp-ui lsp-java lsp-mode treemacs-icons-dired treemacs-projectile treemacs use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -172,6 +172,21 @@
 
 (use-package dockerfile-mode
   :ensure t)
+
+(use-package web-mode
+  :ensure t)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
 
 (provide 'init)
 ;;; init.el ends here
